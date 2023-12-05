@@ -9,7 +9,12 @@
      <h1 class="text-4xl font-black tracking-wide -ml-2">carz</h1>
     </NuxtLink>
     <ul class="flex gap-8 text-lg mt-2 font-medium">
-     <li v-for="link in links" class="group">
+     <li
+      v-for="link in links"
+      class="group"
+      @mouseenter="aboutDropDownVisible"
+      @mouseleave="hideAboutDropDown"
+     >
       <NuxtLink
        v-if="!link.showDropDown"
        :to="link.path"
@@ -22,7 +27,7 @@
       <div v-else class="uppercase relative">
        <span class="cursor-pointer">{{ link.name }}</span>
        <UIcon
-        class="-ml-2 transform transition-all duration-300 group-hover:rotate-180 absolute -right-[18px] top-1"
+        class="-ml-2 transform transition-all duration-300 group-hover:rotate-180 absolute -right-[18px] top-1 cursor-pointer"
         name="i-heroicons-chevron-down"
        />
        <div
@@ -31,13 +36,15 @@
        <div>
         <div
          class="absolute bg-white shadow-lg rounded-md w-[15rem] top-10 -right-4 z-10 hidden group-hover:block transition-all duration-300"
+         v-if="aboutDropDown"
         >
-         <div class="absolute opacity-0 -z-10 left-0 right-0 -top-4 h-[130%]" />
+         <div class="absolute opacity-0 -z-10 left-0 right-0 -top-4 h-[120%]" />
          <ul class="flex flex-col gap-2 p-2 z-20">
           <li
            v-for="item in link.dropDownItems"
            :key="item.name"
            class="rounded-md"
+           @click="hideAboutDropDown"
           >
            <NuxtLink :to="item.path" class="p-2 hover:bg-gray-500/20 rounded-md"
             >{{ item.name }}
@@ -54,10 +61,13 @@
  </header>
 </template>
 <script setup>
-// const aboutDropdown = ref(false);
-// const showDropdown = () => {
-//  aboutDropdown.value = !aboutDropdown.value;
-// };
+const aboutDropDown = ref(false);
+const aboutDropDownVisible = () => {
+ aboutDropDown.value = true;
+};
+const hideAboutDropDown = () => {
+ aboutDropDown.value = false;
+};
 // if (window) {
 //  const scroll = ref(window.scrollY);
 //  watch(
