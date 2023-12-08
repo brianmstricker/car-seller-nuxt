@@ -21,7 +21,7 @@
        class="uppercase relative"
        >{{ link.name }}
        <div
-        class="bg-blue-600 h-1 rounded-full w-0 group-hover:w-full transition-all duration-300 mx-auto relative -top-[2px]"
+        class="bg-blue-800 h-1 rounded-full w-0 group-hover:w-full transition-all duration-300 mx-auto relative -top-[2px]"
        />
       </NuxtLink>
       <div v-else class="uppercase relative">
@@ -31,7 +31,7 @@
         name="i-heroicons-chevron-down"
        />
        <div
-        class="bg-blue-600 h-1 rounded-full w-0 group-hover:w-full transition-all duration-300 mx-auto relative -top-[2px]"
+        class="bg-blue-800 h-1 rounded-full w-0 group-hover:w-full transition-all duration-300 mx-auto relative -top-[2px]"
        />
        <div>
         <div
