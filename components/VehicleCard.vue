@@ -10,10 +10,12 @@
    />
   </div>
   <div class="mt-4">
-   <div class="flex items-end gap-2">
-    <h2 class="font-semibold text-lg">{{ name }}</h2>
-    <div class="h-1 w-1 bg-black rounded-full mb-[10px]" />
-    <span class="text-sm font-normal mb-[2px]">2021</span>
+   <div class="">
+    <h2 class="font-semibold text-lg inline">{{ name }}</h2>
+    <div
+     class="h-[2px] w-[2px] bg-black rounded-full mb-[4px] mx-1 inline-block"
+    />
+    <span class="text-sm font-normal mb-[2px] inline">2021</span>
    </div>
    <p class="text-gray-500">{{ price }}</p>
    <div>
@@ -23,6 +25,7 @@
  </div>
 </template>
 <script setup>
+//todo: fix card styling on mobile
 defineProps({
  name: String,
  price: String,

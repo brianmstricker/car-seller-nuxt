@@ -1,10 +1,10 @@
 <template>
- <main class="mt-10">
-  <h1 class="font-semibold text-xl">
+ <main class="mt-4 sm:mt-10">
+  <h1 class="font-semibold text-xl text-center">
    Shop from our inventory of high-quality, well-kept vehicles or
    <NuxtLink
     to="/sell"
-    class="text-base opacity-80 transition-all duration-300 hover:text-blue-800 underline underline-offset-2"
+    class="text-base text-black/70 transition-all duration-300 hover:text-blue-800 underline underline-offset-2"
     >sell your car</NuxtLink
    >
   </h1>

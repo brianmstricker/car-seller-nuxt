@@ -8,12 +8,12 @@
      <NuxtImg src="logo.png" alt="Logo" class="w-[5.5rem] h-[5.5rem mb-3" />
      <h1 class="text-4xl font-black tracking-wide -ml-2">carz</h1>
     </NuxtLink>
-    <ul class="flex gap-8 text-lg mt-2 font-medium">
+    <ul class="hidden md:flex gap-8 text-lg mt-2 font-medium">
      <li
       v-for="link in links"
       class="group"
-      @mouseenter="aboutDropDownVisible"
-      @mouseleave="hideAboutDropDown"
+      @mouseenter="aboutDropDown = true"
+      @mouseleave="aboutDropDown = false"
      >
       <NuxtLink
        v-if="!link.showDropDown"
@@ -35,7 +35,7 @@
        />
        <div>
         <div
-         class="absolute bg-white shadow-lg rounded-md w-[15rem] top-10 -right-4 z-10 hidden group-hover:block transition-all duration-300"
+         class="absolute bg-white shadow-lg rounded-md w-[15rem] top-10 -right-4 z-20 hidden group-hover:block transition-all duration-300"
          v-if="aboutDropDown"
         >
          <div class="absolute opacity-0 -z-10 left-0 right-0 -top-4 h-[120%]" />
@@ -44,7 +44,7 @@
            v-for="item in link.dropDownItems"
            :key="item.name"
            class="rounded-md"
-           @click="hideAboutDropDown"
+           @click="aboutDropDown = false"
           >
            <NuxtLink :to="item.path" class="p-2 hover:bg-gray-500/20 rounded-md"
             >{{ item.name }}
@@ -56,18 +56,95 @@
       </div>
      </li>
     </ul>
+    <!-- {mobile menu} -->
+    <button @click="mobileNavMenu = true" class="md:hidden mt-[12px]">
+     <UIcon name="i-heroicons-bars-4-solid" class="text-3xl" />
+    </button>
+    <UModal
+     v-model="mobileNavMenu"
+     :ui="{
+      base: 'h-screen ml-auto p-0',
+      padding: 'p-0',
+      margin: 'sm:my-0',
+      width: 'w-[85%] sm:w-[70%] md:w-[60%]',
+      overlay: {
+       background: 'bg-black/75',
+      },
+      transition: {
+       enter: 'ease-out duration-300',
+       enterFrom: 'opacity-0 -right-[200px]',
+       enterTo: 'opacity-100 right-0',
+       leave: 'ease-in duration-300',
+       leaveFrom: 'opacity-100 right-0',
+       leaveTo: 'opacity-0 -right-[200px]',
+      },
+     }"
+     class="md:hidden z-[100] bg-white text-lg font-medium relative"
+    >
+     <button
+      @click="mobileNavMenu = false"
+      class="absolute top-2 left-2 text-2xl"
+     >
+      <UIcon name="i-heroicons-x-mark-20-solid" />
+     </button>
+     <ul class="flex flex-col items-center justify-center gap-8 w-full h-full">
+      <li v-for="link in links" class="group">
+       <NuxtLink
+        v-if="!link.showDropDown"
+        :to="link.path"
+        class="uppercase relative"
+        @click="closeAboutMenuWithDelay(), (mobileNavMenu = false)"
+        >{{ link.name }}
+        <div
+         class="bg-blue-800 h-1 rounded-full w-0 group-hover:w-full transition-all duration-300 mx-auto relative -top-[2px]"
+        />
+       </NuxtLink>
+       <div v-else class="uppercase relative max-w-fit mx-auto">
+        <span @click="aboutDropDown = !aboutDropDown" class="cursor-pointer">{{
+         link.name
+        }}</span>
+        <!-- <UIcon
+         v-if="aboutDropDown"
+         class="-ml-2 transform transition-all duration-300 absolute -right-[18px] top-1 cursor-pointer"
+         name="i-heroicons-chevron-up"
+        />
+        <UIcon
+         v-else
+         class="-ml-2 transform transition-all duration-300 absolute -right-[18px] top-1 cursor-pointer"
+         name="i-heroicons-chevron-down"
+        /> -->
+        <div
+         v-if="aboutDropDown"
+         class="bg-blue-800 h-1 rounded-full w-full transition-all duration-300 mx-auto relative -top-[2px]"
+        />
+       </div>
+       <div>
+        <div v-if="aboutDropDown && link.showDropDown">
+         <ul class="flex flex-col gap-2 p-2 bg-gray-500/20 rounded-md mt-[6px]">
+          <li v-for="item in link.dropDownItems" :key="item.name" class="mt-1">
+           <NuxtLink
+            :to="item.path"
+            class="px-2 py-1"
+            @click="closeAboutMenuWithDelay(), (mobileNavMenu = false)"
+            >{{ item.name }}
+           </NuxtLink>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </li>
+     </ul>
+    </UModal>
    </div>
   </nav>
  </header>
 </template>
 <script setup>
 const aboutDropDown = ref(false);
-const aboutDropDownVisible = () => {
- aboutDropDown.value = true;
-};
-const hideAboutDropDown = () => {
- aboutDropDown.value = false;
-};
+const mobileNavMenu = ref(false);
+function closeAboutMenuWithDelay() {
+ setTimeout(() => (aboutDropDown.value = false), 300);
+}
 // if (window) {
 //  const scroll = ref(window.scrollY);
 //  watch(
