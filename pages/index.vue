@@ -1,6 +1,6 @@
 <template>
  <main class="mt-4 mb-8">
-  <div class="flex flex-col max-w-[900px] mx-auto">
+  <div class="flex flex-col max-w-[885px] mx-auto">
    <h1 class="font-semibold text-xl text-center">
     Shop from our inventory of high-quality, well-kept vehicles or
     <NuxtLink
@@ -9,12 +9,30 @@
      >sell your car</NuxtLink
     >
    </h1>
+   <!-- todo: search functionality -->
    <div class="my-4">
-    <UInput v-model="searchBar" placeholder="Search for vehicle..." />
+    <UInput
+     v-model="searchBar"
+     name="searchBar"
+     placeholder="Search for vehicle..."
+     color="gray"
+     variant="outline"
+     icon="i-heroicons-magnifying-glass-20-solid"
+     :ui="{ icon: { trailing: { pointer: '' } } }"
+    >
+     <template #trailing>
+      <UButton
+       v-show="searchBar !== ''"
+       color="gray"
+       variant="link"
+       icon="i-heroicons-x-mark-20-solid"
+       :padded="false"
+       @click="searchBar = ''"
+      />
+     </template>
+    </UInput>
    </div>
   </div>
-  <!-- todo: search functionality -->
-
   <h2 class="text-3xl font-semibold italic">popular vehicles</h2>
   <div
    class="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 mt-4"

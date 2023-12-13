@@ -1,8 +1,6 @@
 <template>
- <header
-  class="bg-gray-200 h-24 flex items-center sticky top-0 rounded-b-md contain"
- >
-  <nav class="w-full">
+ <header class="h-24 flex items-center sticky top-0 contain-header z-10">
+  <nav class="w-full bg-gray-200/90 backdrop-blur rounded-b-md px-4">
    <div class="flex items-center justify-between">
     <NuxtLink to="/" class="flex items-center gap-2 -ml-2.5">
      <NuxtImg src="logo.png" alt="Logo" class="w-[5.5rem] h-[5.5rem mb-3" />
@@ -141,19 +139,6 @@ const mobileNavMenu = ref(false);
 function closeAboutMenuWithDelay() {
  setTimeout(() => (aboutDropDown.value = false), 300);
 }
-// if (window) {
-//  const scroll = ref(window.scrollY);
-//  watch(
-//   () => scroll,
-//   (newVal, oldVal) => {
-//    if (newVal > oldVal) {
-//     console.log("scrolling down");
-//    } else {
-//     console.log("scrolling up");
-//    }
-//   }
-//  );
-// }
 const links = [
  { name: "Buy", path: "/cars" },
  { name: "Sell", path: "/sell" },
@@ -169,7 +154,4 @@ const links = [
  },
  { name: "Login", path: "/login" },
 ];
-//todo: add backdrop blur on scroll
-//TODO add a dropdown for about
-//TODO mobile nav menu
 </script>
