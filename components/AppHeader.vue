@@ -114,7 +114,9 @@
        </div>
        <div>
         <div v-if="aboutDropDown && link.showDropDown">
-         <ul class="flex flex-col gap-2 p-2 bg-gray-500/20 rounded-md mt-[6px]">
+         <ul
+          class="flex flex-col gap-2 px-6 py-2 bg-gray-500/20 rounded-md mt-[6px]"
+         >
           <li v-for="item in link.dropDownItems" :key="item.name" class="mt-1">
            <NuxtLink
             :to="item.path"
