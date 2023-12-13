@@ -103,16 +103,10 @@
         <span @click="aboutDropDown = !aboutDropDown" class="cursor-pointer">{{
          link.name
         }}</span>
-        <!-- <UIcon
-         v-if="aboutDropDown"
-         class="-ml-2 transform transition-all duration-300 absolute -right-[18px] top-1 cursor-pointer"
-         name="i-heroicons-chevron-up"
-        />
         <UIcon
-         v-else
-         class="-ml-2 transform transition-all duration-300 absolute -right-[18px] top-1 cursor-pointer"
-         name="i-heroicons-chevron-down"
-        /> -->
+         class="absolute top-1/2 bottom-1/2 -translate-y-1/2"
+         name="i-heroicons-minus-small-20-solid"
+        />
         <div
          v-if="aboutDropDown"
          class="bg-blue-800 h-1 rounded-full w-full transition-all duration-300 mx-auto relative -top-[2px]"

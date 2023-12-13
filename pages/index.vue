@@ -9,7 +9,7 @@
    >
   </h1>
   <div
-   class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4 gap-4"
+   class="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4 gap-4"
   >
    <VehicleCard
     v-for="vehicle in vehicles"
