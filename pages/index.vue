@@ -1,5 +1,5 @@
 <template>
- <main class="mt-4 sm:mt-10">
+ <main class="mt-4 mb-8">
   <h1 class="font-semibold text-xl text-center">
    Shop from our inventory of high-quality, well-kept vehicles or
    <NuxtLink
@@ -8,8 +8,9 @@
     >sell your car</NuxtLink
    >
   </h1>
+  <!-- todo: add search here? -->
   <div
-   class="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4 gap-4"
+   class="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 mt-4"
   >
    <VehicleCard
     v-for="vehicle in vehicles"
@@ -17,9 +18,22 @@
     v-bind="vehicle"
    />
   </div>
+  <div class="mt-16">
+   <h2 class="text-3xl font-semibold italic">search by vehicle type</h2>
+   <div
+    class="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 mt-4"
+   >
+    <VehicleTypeCard
+     v-for="type in VEHICLE_TYPES"
+     :key="type.name"
+     v-bind="type"
+    />
+   </div>
+  </div>
  </main>
 </template>
 <script setup>
+import { VEHICLE_TYPES } from "~/constants";
 definePageMeta({
  title: "carz - Home",
 });
