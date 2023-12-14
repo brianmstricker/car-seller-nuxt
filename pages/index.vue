@@ -10,7 +10,7 @@
     >
    </h1>
    <!-- todo: search functionality -->
-   <div class="my-4">
+   <div class="my-2">
     <UInput
      v-model="searchBar"
      name="searchBar"

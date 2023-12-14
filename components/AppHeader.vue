@@ -6,7 +6,7 @@
      <NuxtImg src="logo.png" alt="Logo" class="w-[5.5rem] h-[5.5rem mb-3" />
      <h1 class="text-4xl font-black tracking-wide -ml-2">carz</h1>
     </NuxtLink>
-    <ul class="hidden md:flex gap-8 text-lg mt-2 font-medium">
+    <ul class="hidden md:flex gap-8 text-lg mt-2 font-medium mr-10">
      <li
       v-for="link in links"
       class="group"
@@ -54,8 +54,14 @@
       </div>
      </li>
     </ul>
+    <div class="absolute right-4 mt-3 hidden md:block">
+     <!-- update the chip to display welcome message -->
+     <UChip>
+      <UIcon name="i-heroicons-bell" class="text-[22px]" />
+     </UChip>
+    </div>
     <!-- {mobile menu} -->
-    <button @click="mobileNavMenu = true" class="md:hidden mt-[12px]">
+    <button @click="mobileNavMenu = true" class="md:hidden mt-[13px]">
      <UIcon name="i-heroicons-bars-4-solid" class="text-3xl" />
     </button>
     <UModal
