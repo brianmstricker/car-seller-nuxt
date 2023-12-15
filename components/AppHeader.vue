@@ -1,6 +1,6 @@
 <template>
- <header class="h-24 flex items-center contain-header z-10">
-  <nav class="w-full bg-gray-200/90 backdrop-blur rounded-b-md px-4">
+ <header class="h-24 flex items-center contain-header z-20">
+  <nav class="w-full bg-gray-200/90 backdrop-blur rounded-b-md px-4 z-20">
    <div class="flex items-center justify-between">
     <NuxtLink to="/" class="flex items-center gap-2 -ml-2.5">
      <NuxtImg src="logo.png" alt="Logo" class="w-[5.5rem] h-[5.5rem mb-3" />

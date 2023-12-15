@@ -9,29 +9,7 @@
      >sell your car</NuxtLink
     >
    </h1>
-   <!-- todo: search functionality -->
-   <div class="my-2">
-    <UInput
-     v-model="searchBar"
-     name="searchBar"
-     placeholder="Search for vehicle..."
-     color="gray"
-     variant="outline"
-     icon="i-heroicons-magnifying-glass-20-solid"
-     :ui="{ icon: { trailing: { pointer: '' } } }"
-    >
-     <template #trailing>
-      <UButton
-       v-show="searchBar !== ''"
-       color="gray"
-       variant="link"
-       icon="i-heroicons-x-mark-20-solid"
-       :padded="false"
-       @click="searchBar = ''"
-      />
-     </template>
-    </UInput>
-   </div>
+   <IndexSearch />
   </div>
   <h2 class="text-3xl font-semibold italic">popular vehicles</h2>
   <div
@@ -62,5 +40,4 @@ import { VEHICLE_TYPES, SALE_VEHICLES } from "~/constants";
 definePageMeta({
  title: "carz - Home",
 });
-const searchBar = ref("");
 </script>
