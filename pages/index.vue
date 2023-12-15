@@ -1,8 +1,9 @@
 <template>
  <main class="mt-4 mb-8">
   <div class="flex flex-col max-w-[885px] mx-auto">
-   <h1 class="font-semibold text-xl text-center">
+   <h1 class="font-semibold sm:text-xl text-center">
     Shop from our inventory of high-quality, well-kept vehicles or
+    <br class="min-[500px]:hidden" />
     <NuxtLink
      to="/sell"
      class="text-base text-black/70 transition-all duration-300 hover:text-blue-800 underline underline-offset-2"
@@ -33,6 +34,7 @@
     />
    </div>
   </div>
+  <IndexWhyBuySellSection />
  </main>
 </template>
 <script setup>
