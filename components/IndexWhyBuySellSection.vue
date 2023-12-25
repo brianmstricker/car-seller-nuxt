@@ -2,7 +2,7 @@
  <div class="mt-16">
   <h2 class="text-3xl font-semibold italic">why buy from us?</h2>
   <div
-   class="flex flex-col min-[500px]:flex-row justify-between mt-4 sm:w-[90%] lg:w-3/4 mx-auto gap-y-2"
+   class="flex flex-col min-[500px]:flex-row justify-between mt-6 sm:w-[90%] lg:w-3/4 mx-auto gap-y-2"
   >
    <div>
     <NuxtImg
@@ -64,7 +64,35 @@
   </div>
   <div>
    <h2 class="text-3xl font-semibold italic">sell your vehicle with ease</h2>
-   <!-- todo: this -->
+   <div
+    class="mt-6 flex flex-col sm:flex-row gap-x-6 sm:w-[95%] lg:w-3/4 mx-auto gap-y-2"
+   >
+    <div class="flex items-center">
+     <NuxtImg
+      src="images/list.webp"
+      class="rounded-full w-[150px] h-[150px] md:w-[175px] md:h-[175px] object-cover"
+      sizes="150px md:175px"
+      width="175px"
+      height="175px"
+     />
+     <p class="text-sm lg:text-base lg:max-w-[50%]">
+      List your car at any price you want, and wait to receive offers!
+     </p>
+    </div>
+    <div class="flex items-center">
+     <NuxtImg
+      src="images/contactus.png"
+      class="rounded-full w-[150px] h-[150px] md:w-[175px] md:h-[175px] object-cover"
+      sizes="150px md:175px"
+      width="175px"
+      height="175px"
+     />
+     <p class="text-sm lg:text-base lg:max-w-[50%]">
+      Submit your vehicles information and you may receive an offer directly
+      from us!
+     </p>
+    </div>
+   </div>
   </div>
  </div>
 </template>
