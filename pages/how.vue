@@ -1,1 +1,1 @@
-<template>how</template>
+<template><main>how</main></template>

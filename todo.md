@@ -5,4 +5,4 @@
 <https://www.vroom.com/>
 
 -add scroll to top button
--update constants sale vehicles
+-auth (<https://sidebase.io/nuxt-auth/getting-started>)

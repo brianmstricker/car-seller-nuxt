@@ -25,3 +25,7 @@ body {
   padding: 0 0;
  }
 }
+
+main {
+ min-height: 85vh;
+}

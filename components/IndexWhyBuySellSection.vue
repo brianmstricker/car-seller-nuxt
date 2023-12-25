@@ -79,7 +79,7 @@
       List your car at any price you want, and wait to receive offers!
      </p>
     </div>
-    <div class="flex items-center">
+    <div class="flex items-center justify-end">
      <NuxtImg
       src="images/contactus.png"
       class="rounded-full w-[150px] h-[150px] md:w-[175px] md:h-[175px] object-cover"

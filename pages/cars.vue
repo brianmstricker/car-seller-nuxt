@@ -1,1 +1,1 @@
-<template>cars</template>
+<template><main>cars</main></template>
