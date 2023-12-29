@@ -72,7 +72,7 @@
       margin: 'sm:my-0',
       width: 'w-[85%] sm:w-[70%] md:w-[60%]',
       overlay: {
-       background: 'bg-black/75',
+       background: 'bg-black/50',
       },
       transition: {
        enter: 'ease-out duration-300',

@@ -55,19 +55,19 @@
   </div>
   <div class="my-8 flex w-full items-center">
    <div
-    class="h-[1px] bg-gradient-to-r flex-1 from-gray-400/80 via-gray-300 to-white via-80%"
+    class="h-[1px] bg-gradient-to-r flex-1 from-gray-400/80 via-gray-300 to-gray-200 via-80%"
    />
    <span class="px-4">or</span>
    <div
-    class="h-[1px] bg-gradient-to-l flex-1 from-gray-400/80 via-gray-300 to-white via-80%"
+    class="h-[1px] bg-gradient-to-l flex-1 from-gray-400/80 via-gray-300 to-gray-200 via-80%"
    />
   </div>
   <div>
    <h2 class="text-3xl font-semibold italic">sell your vehicle with ease</h2>
    <div
-    class="mt-6 flex flex-col sm:flex-row gap-x-6 sm:w-[95%] lg:w-3/4 mx-auto gap-y-2"
+    class="mt-6 flex flex-col sm:flex-row gap-x-6 sm:w-[95%] lg:w-4/5 mx-auto gap-y-2"
    >
-    <div class="flex items-center">
+    <div class="flex items-center justify-end">
      <NuxtImg
       src="images/list.webp"
       class="rounded-full w-[150px] h-[150px] md:w-[175px] md:h-[175px] object-cover"
