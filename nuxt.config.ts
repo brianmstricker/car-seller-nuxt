@@ -11,5 +11,8 @@ export default defineNuxtConfig({
    autoprefixer: {},
   },
  },
+ app: {
+  pageTransition: { name: "page", mode: "out-in" },
+ },
  modules: ["@nuxt/image", "@nuxt/ui"],
 });
