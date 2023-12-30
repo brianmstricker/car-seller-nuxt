@@ -53,21 +53,23 @@
      view full listing
     </UButton>
    </div>
-   <h2 class="text-center text-2xl font-bold">{{ name }}</h2>
-   <div class="flex justify-center">
-    <NuxtImg
-     :src="image"
-     class="w-[300px] h-[200px] md:w-[400px] md:h-[300px] lg:w-[500px] object-contain"
-     sizes="300px md:300px lg:500px"
-    />
-   </div>
-   <div class="mt-4 max-w-xs md:max-w-[350px] mx-auto md:text-lg">
-    <div><span class="font-medium">Cost:</span> {{ price }}</div>
-    <div><span class="font-medium">Sold by:</span>{{ seller }}</div>
-    <!-- <div><span class="font-medium">Current mileage:</span>{{ seller }}</div>
-    <div><span class="font-medium">MPG:</span>{{ seller }}</div>
-    <div><span class="font-medium">Vehicle features:</span>{{ seller }}</div>
-    <div><span class="font-medium">Details:</span>{{ seller }}</div> -->
+   <div class="w-[300px] md:w-[400px] lg:w-[500px] mx-auto">
+    <h2 class="text-center text-2xl font-bold">{{ name }}</h2>
+    <div class="flex justify-center">
+     <NuxtImg
+      :src="image"
+      class="w-[300px] h-[200px] md:w-[400px] md:h-[300px] lg:w-[500px] object-contain"
+      sizes="300px md:300px lg:500px"
+     />
+    </div>
+    <div class="mt-4 md:text-lg px-4">
+     <div><span class="font-medium">Cost:</span> {{ price }}</div>
+     <div><span class="font-medium">Sold by:</span>{{ seller }}</div>
+     <!-- <div><span class="font-medium">Current mileage:</span>{{ seller }}</div>
+     <div><span class="font-medium">MPG:</span>{{ seller }}</div>
+     <div><span class="font-medium">Vehicle features:</span>{{ seller }}</div>
+     <div><span class="font-medium">Details:</span>{{ seller }}</div> -->
+    </div>
    </div>
   </UCard>
  </UModal>

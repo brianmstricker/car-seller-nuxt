@@ -51,7 +51,7 @@
 </template>
 <script setup>
 import { VEHICLE_TYPES, SALE_VEHICLES } from "~/constants";
-definePageMeta({
+useHead({
  title: "carz - Home",
 });
 const yScrollPos = ref(0);
