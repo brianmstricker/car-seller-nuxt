@@ -14,5 +14,9 @@ export default defineNuxtConfig({
  app: {
   pageTransition: { name: "page", mode: "out-in" },
  },
- modules: ["@nuxt/image", "@nuxt/ui"],
+ modules: ["@nuxt/image", "@nuxt/ui", "nuxt-mongoose"],
+ mongoose: {
+  uri: process.env.MONGODB_URI,
+  options: {},
+ },
 });

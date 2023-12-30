@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@fontsource-variable/roboto-mono": "^5.0.16",
-    "@nuxt/ui": "^2.11.1"
+    "@nuxt/ui": "^2.11.1",
+    "nuxt-mongoose": "^1.0.3"
   }
 }
