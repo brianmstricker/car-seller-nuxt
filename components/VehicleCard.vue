@@ -64,6 +64,10 @@
    <div class="mt-4 max-w-xs md:max-w-[350px] mx-auto md:text-lg">
     <div><span class="font-medium">Cost:</span> {{ price }}</div>
     <div><span class="font-medium">Sold by:</span>{{ seller }}</div>
+    <!-- <div><span class="font-medium">Current mileage:</span>{{ seller }}</div>
+    <div><span class="font-medium">MPG:</span>{{ seller }}</div>
+    <div><span class="font-medium">Vehicle features:</span>{{ seller }}</div>
+    <div><span class="font-medium">Details:</span>{{ seller }}</div> -->
    </div>
   </UCard>
  </UModal>

@@ -1,5 +1,17 @@
 <template>
- <main class="mt-4 mb-8">
+ <main class="mt-4 mb-8 relative">
+  <UButton
+   v-if="yScrollPos > 100"
+   color="gray"
+   variant="ghost"
+   class="fixed bottom-3 right-3 md:bottom-6 md:right-6 p-1.5 border border-gray-300 rounded-full shadow-md bg-white"
+   @click="scrollToTop"
+  >
+   <UIcon
+    name="i-heroicons-arrow-small-up-solid"
+    class="w-5 h-5 md:w-6 md:h-6"
+   />
+  </UButton>
   <div class="flex flex-col max-w-[885px] mx-auto">
    <h1 class="font-semibold sm:text-xl text-center">
     Shop from our inventory of high-quality, well-kept vehicles or
@@ -42,4 +54,20 @@ import { VEHICLE_TYPES, SALE_VEHICLES } from "~/constants";
 definePageMeta({
  title: "carz - Home",
 });
+const yScrollPos = ref(0);
+onMounted(() => {
+ window.addEventListener("scroll", handleScroll);
+});
+onUnmounted(() => {
+ window.removeEventListener("scroll", handleScroll);
+});
+function handleScroll() {
+ yScrollPos.value = window.scrollY;
+}
+function scrollToTop() {
+ window.scrollTo({
+  top: 0,
+  behavior: "smooth",
+ });
+}
 </script>
