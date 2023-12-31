@@ -6,3 +6,5 @@
 
 -add scroll to top button
 -auth (<https://sidebase.io/nuxt-auth/getting-started>)
+(<https://authjs-nuxt.pages.dev/>)
+-add credentials provider
