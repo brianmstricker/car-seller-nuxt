@@ -1,6 +1,8 @@
 <template>
- <header class="h-24 flex items-center contain-header z-20">
-  <nav class="w-full bg-gray-200/90 backdrop-blur rounded-b-md px-4 z-20">
+ <header
+  class="h-24 flex items-center contain-header z-20 bg-gray-200/90 rounded-b-md"
+ >
+  <nav class="w-full backdrop-blur px-4 z-20">
    <div class="flex items-center justify-between">
     <NuxtLink to="/" class="flex items-center gap-2 -ml-2.5">
      <NuxtImg src="logo.png" alt="Logo" class="w-[5.5rem] h-[5.5rem]" />
@@ -10,11 +12,12 @@
      <li
       v-for="link in links"
       class="group"
+      :class="link.name === 'About' ? ' mr-1' : ''"
       @mouseenter="aboutDropDown = true"
       @mouseleave="aboutDropDown = false"
      >
       <NuxtLink
-       v-if="!link.showDropDown"
+       v-if="!link.showDropDown && link.name !== 'Logout'"
        :to="link.path"
        class="uppercase relative"
        >{{ link.name }}
@@ -22,6 +25,17 @@
         class="bg-blue-800 h-1 rounded-full w-0 group-hover:w-full transition-all duration-300 mx-auto relative -top-[2px]"
        />
       </NuxtLink>
+      <div v-else-if="link.name === 'Logout'" class="relative">
+       <button
+        class="cursor-pointer uppercase"
+        @click="signOut(), (aboutDropDown = false)"
+       >
+        {{ link.name }}
+       </button>
+       <div
+        class="bg-blue-800 h-1 rounded-full w-0 group-hover:w-full transition-all duration-300 mx-auto relative -top-[2px]"
+       />
+      </div>
       <div v-else class="uppercase relative">
        <span class="cursor-pointer">{{ link.name }}</span>
        <UIcon
@@ -140,6 +154,7 @@
  </header>
 </template>
 <script setup>
+const { status, signOut } = useAuth();
 const aboutDropDown = ref(false);
 const mobileNavMenu = ref(false);
 function closeAboutMenuWithDelay() {
@@ -158,6 +173,12 @@ const links = [
    { name: "How it works", path: "/how" },
   ],
  },
- { name: "Login", path: "/login" },
 ];
+if (status.value === "unauthenticated") {
+ links.push({ name: "Login", path: "/login" });
+}
+if (status.value === "authenticated") {
+ links.push({ name: "Account", path: "/account" });
+ links.push({ name: "Logout" });
+}
 </script>

@@ -21,8 +21,10 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@auth/mongodb-adapter": "^2.0.10",
     "@fontsource-variable/roboto-mono": "^5.0.16",
     "@nuxt/ui": "^2.11.1",
+    "mongodb": "^6.3.0",
     "next-auth": "4.22.5",
     "nuxt-mongoose": "^1.0.3"
   }

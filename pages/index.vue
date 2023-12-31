@@ -51,6 +51,7 @@
 </template>
 <script setup>
 import { VEHICLE_TYPES, SALE_VEHICLES } from "~/constants";
+definePageMeta({ auth: false });
 useHead({
  title: "carz - Home",
 });
